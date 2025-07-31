@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "k-studio-test"
+version = "0.1.0"
+description = ""
+authors = ["Quiet <quiet147258@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.116.1"
+sqlalchemy = "^2.0.42"
+alembic = "^1.16.4"
+pydantic-settings = "^2.10.1"
+jwt = "^1.4.0"
+uvicorn = "^0.35.0"
+asyncpg = "^0.30.0"
+pyjwt = "^2.10.1"
+python-multipart = "^0.0.20"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.3.0"
+autoflake = "^2.3.1"
+mypy = "^1.8.0"
+pre-commit = "^3.6.0"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.poetry.scripts]
+format = "black ."
+lint = "flake8 ."
+clean-imports = "autoflake --in-place --remove-all-unused-imports --recursive ."
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
